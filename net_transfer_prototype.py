@@ -49,7 +49,7 @@ if content_image_file is not None:
                               "filesize":content_image_file.size}
     st.write(file_details)
     # To View Uploaded Image
-    st.image(load_image(content_image_file),width=250)
+    st.image(load_image(content_image_file),width=350)
     
 def load_image(style_image_file):
     style_img = Image.open(style_image_file)

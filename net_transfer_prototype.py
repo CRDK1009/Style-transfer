@@ -1,5 +1,17 @@
 import streamlit as st
-st.markdown("_The Libraries needed for the Application will take time to load. Please wait, your patience will be rewarded shortly..._")
+import time
+def customMsg(msg, wait=0, type_='warning'):
+    placeholder = st.empty()
+    styledMsg = f'\
+        <div class="element-container" style="width: 693px;">\
+            <div class="alert alert-{type_} stAlert" style="width: 693px;">\
+                <div class="markdown-text-container">\
+                    <p>{msg}</p></div></div></div>\
+    '
+    placeholder.markdown(styledMsg, unsafe_allow_html=True)
+    time.sleep(wait)
+    placeholder.empty()
+#st.markdown("_The Libraries needed for the Application will take time to load. Please wait, your patience will be rewarded shortly..._")
 
 import os
 import tensorflow as tf
@@ -17,6 +29,9 @@ import PIL.Image
 import tensorflow_hub as hub
 # Include PIL, load_image before main()
 from PIL import Image
+
+msg = "The Libraries needed for the Application will take time to load. Please wait, your patience will be rewarded shortly..."
+customMsg(msg, 7, 'warning')
 
 def load_image(content_image_file):
     content_img = Image.open(content_image_file)

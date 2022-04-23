@@ -65,7 +65,7 @@ if style_image_file is not None:
                               "filesize":style_image_file.size}
     st.write(file_details)
     # To View Uploaded Image
-    st.image(load_image(style_image_file),width=250)
+    st.image(load_image(style_image_file),width=350)
 
 st.markdown("_Style image is superimposed on the Content image which generates a new image_")  
 
@@ -115,4 +115,4 @@ if st.button('Generate'):
     stylized_image = hub_model(tf.constant(a), tf.constant(b))[0]
     stylized_image = tensor_to_image(stylized_image)
     st.subheader("New Image")
-    st.image(stylized_image,width=350)
+    st.image(stylized_image,width=500)

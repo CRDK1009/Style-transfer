@@ -33,8 +33,8 @@ from PIL import Image
 msg = "The Libraries needed for the Application will take time to load. Please wait, your patience will be rewarded shortly..."
 customMsg(msg, 7, 'warning')
 
-vid_file = Image.open("Style_transfer_example.mp4","rb").read() 
-st.video(vid_file,start_time=3)
+#vid_file = Image.open("Style_transfer_example.mp4","rb").read() 
+#st.video(vid_file,start_time=3)
 
 def load_image(content_image_file):
     content_img = Image.open(content_image_file)
